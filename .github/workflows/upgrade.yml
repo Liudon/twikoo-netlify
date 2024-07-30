@@ -33,7 +33,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: update version
         run: |
-          response=$(curl -sf https://api.github.com/repos/twikoojs/twikoo/releases/latest)
+          response=$(curl -sf -H "Authorization: token $github_token" -H "Accept: application/vnd.github+json" https://api.github.com/repos/twikoojs/twikoo/releases/latest)
           version=$(echo $response | jq -r '.tag_name')
           if [ -n "$version" ]; then
             sed -i "s/\"twikoo-netlify\": \".*\"/\"twikoo-netlify\": \"$version\"/" package.json
