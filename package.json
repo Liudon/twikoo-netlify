@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "twikoo-netlify": "2.0.13"
+    "twikoo-netlify": "2.0.14"
   },
   "engines": {
     "node": ">=22.12.0"
